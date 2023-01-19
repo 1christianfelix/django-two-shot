@@ -23,5 +23,6 @@ def homepage(request):
 urlpatterns = [
     path('', homepage),
     path("receipts/", include('receipts.urls')),
+    path('accounts/', include('accounts.urls')),
     path("admin/", admin.site.urls),
 ]
