@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
+
+def homepage(request):
+    return redirect("home")
 
 urlpatterns = [
+    path('', homepage),
     path("receipts/", include('receipts.urls')),
     path("admin/", admin.site.urls),
 ]
