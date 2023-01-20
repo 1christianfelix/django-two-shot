@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title></title>
-  </head>
-  <body>
+{% extends 'base.html' %}
+
+{% block content %}
     <main>
       <h1>My Receipts</h1>
       <table>
@@ -23,7 +20,7 @@
               <td>{{ receipt.vendor }}</td>
               <td>{{ receipt.total }}</td>
               <td>{{ receipt.tax }}</td>
-              <td>{{ receipt.date|date:"n/j/y" }}</td>
+              <td>{{ receipt.date|date:"m/j/y" }}</td>
               <!-- accessing the name of the foreign objects: -->
               <td>{{ receipt.category.name }}</td>
               <td>{{ receipt.account.name }}</td>
@@ -32,5 +29,4 @@
         </tbody>
       </table>
     </main>
-  </body>
-</html>
+{% endblock content %}
