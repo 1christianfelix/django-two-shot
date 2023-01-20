@@ -11,7 +11,7 @@ class ExpenseCategory(models.Model):
         on_delete=models.CASCADE,
     )
     def __str__(self):
-        return self.title
+        return self.name
 
 class Account(models.Model):
       name = models.CharField(max_length=100)
@@ -22,7 +22,7 @@ class Account(models.Model):
           on_delete=models.CASCADE,
       )
       def __str__(self):
-        return self.title
+        return self.name
 
 class Receipt(models.Model):
     vendor = models.CharField(max_length=200)
@@ -34,7 +34,7 @@ class Receipt(models.Model):
       max_digits=10,
       decimal_places=3
     )
-    date = models.DateTimeField(auto_now_add=True) # MIGHT HAVE TO REMOVE THE PROPERTY ************************************
+    date = models.DateTimeField() # MIGHT HAVE TO REMOVE THE PROPERTY ************************************
     purchaser = models.ForeignKey(
       settings.AUTH_USER_MODEL,
       related_name="receipts",
@@ -52,4 +52,4 @@ class Receipt(models.Model):
       null=True
     )
     def __str__(self):
-        return self.title
+        return self.name
