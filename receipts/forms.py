@@ -13,3 +13,10 @@ class ReceiptForm(forms.ModelForm):
       'category',
       'account',
     }
+
+class CategoryForm(forms.ModelForm):
+  class Meta:
+    model = ExpenseCategory
+    fields = {
+      'name'
+    }
